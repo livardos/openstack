@@ -1,0 +1,16 @@
+---
+clouds:
+  my_cloud:
+    identity_api_version: 3
+    auth:
+      auth_url: <IDENTITY URL>
+      password: <PASSWORD>
+      project_name: <PROJECT>
+      username: <YOUR USERNAME>
+      user_domain_name: <YOUR DOMAIN>
+      # User Domain usually is Default
+      project_domain_name: Default
+    regions:
+    - name: RegionOne
+    #adjust the region name from your openrc, Usually its RegionOne
+~                   
