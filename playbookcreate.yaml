@@ -1,0 +1,12 @@
+- hosts: localhost
+  tasks:
+    - openstack.cloud.server:
+        state: present
+        cloud: my_cloud
+        name: vm-ansible-test
+        image: a68d8fba-b8cc-45de-8f45-3ca81ac84e91
+        key_name: test-key
+        timeout: 200
+        flavor: m1.medium
+        security_groups: default
+        auto_ip: yes
