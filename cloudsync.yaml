@@ -1,3 +1,4 @@
+#this task is to verify the connection to the Openstack is a success
 - hosts: localhost
   tasks:
     - openstack.cloud.networks_info:
