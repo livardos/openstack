@@ -1,0 +1,25 @@
+#define remote hosts
+def remote=[:]
+remote.name= 'ubuntu'
+remote.host= '<IP ADDRESS>'
+remote.allowAnyHosts = true
+
+#pipeline
+pipeline {
+  agent any
+  environment {
+    UBUNTU_CREDS=credentials('ubuntu')
+    }
+    stages {
+      stage('SSH') {
+        steps {
+          script {
+            remote.user=env.UBUNTU_CREDS_USR
+            remote.password=env.UBUNTU_CREDS_PSW
+            }
+            sshCommand(remote: remote, command: "source /home/ubuntu/venv/bin/activate && ansible-playbook playbook.yaml")
+          }
+        }
+     }
+  }
+  
