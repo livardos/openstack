@@ -1,0 +1,4 @@
+- hosts: localhost
+  tasks:
+    - openstack.cloud.networks_info:
+        cloud: my_cloud
